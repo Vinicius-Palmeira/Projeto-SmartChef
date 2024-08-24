@@ -9,7 +9,7 @@ if (isset($_POST["user"]) && isset($_POST["telefone"]) && isset($_POST["cnpj"]) 
     $email = $_POST["email"];
     $password = $_POST["pass"];
     $word = $_POST["word"];
-    $atividade = "ATIVO";
+    $atividade = 'ATIVO';
 
     if ($username == "" || $telefone == "" || $cnpj == "" || $email == "" || $password == "" || $word == "") {
         die(header("HTTP/1.0 401 Preenche todos os campos do formulario"));
@@ -70,9 +70,12 @@ if (isset($_POST["user"]) && isset($_POST["telefone"]) && isset($_POST["cnpj"]) 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
 
-    $stmt = $con->prepare("INSERT INTO EMPRESA (`ID`,`USERNAME`, `TELEFONE`, `CNPJ`, `EMAIL`, `SENHA`, `ATIVIDADE`) VALUES (0, ?, ?, ?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO EMPRESA (ID, USERNAME, TELEFONE, CNPJ, EMAIL, SENHA, ATIVIDADE) VALUES (0, ?, ?, ?, ?, ?, ?);");
     $stmt->bind_param("sssss", $username, $telefone, $cnpj, $email, $password, $atividade);
-    $stmt->execute();
+    if (!$stmt->execute()) {
+        die("Erro ao inserir na tabela EMPRESA: " . $stmt->error);
+    }
+    
 
     $getUser = $con->prepare("SELECT ID FROM EMPRESA WHERE USERNAME = ?");
     $getUser->bind_param("s", $username);
@@ -84,10 +87,24 @@ if (isset($_POST["user"]) && isset($_POST["telefone"]) && isset($_POST["cnpj"]) 
     $token = bin2hex(openssl_random_pseudo_bytes(20));
     $key = rand(100000000, 999999999);
 
-    $stmt = $con->prepare("INSERT INTO FUNCIONARIOS (`ID`,`EMPRESA_ID`, `USERNAME`, `SENHA`, `FUNCAO`, `TOKEN`, `CHAVE`) VALUES (0, ?, ?, ?, 'ADM', ?, ?)");
-    $tempusername = $username;
-    $stmt->bind_param("isssi", $EMPRESA_ID, $tempusername, $password, $token, $key);
-    $stmt->execute();
+    $stmt = $con->prepare("INSERT INTO FUNCIONARIOS (`ID`,`EMPRESA_ID`, `USERNAME`, `SENHA`, `FUNCAO`, `TOKEN`, `CHAVE`) VALUES (0, ?, ?, ?, 'ADM', ?, ?);");
+    $stmt->bind_param("isssi", $EMPRESA_ID, $username, $password, $token, $key);
+    if (!$stmt->execute()) {
+        die("Erro ao inserir na tabela FUNCIONARIOS: " . $stmt->error);
+    }
+
+
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    
+    if (!$stmt->execute()) {
+        die("Error executing query: " . $stmt->error);
+    }
+    
+    if (!$stmt->execute()) {
+        die("Error inserting into EMPRESA: " . $stmt->error);
+    }    
 
     $getUser = $con->prepare("SELECT EMPRESA_ID, ID, TOKEN, CHAVE, FUNCAO FROM FUNCIONARIOS WHERE USERNAME = ?");
     $getUser->bind_param("s", $username);
