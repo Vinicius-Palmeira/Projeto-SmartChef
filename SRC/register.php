@@ -71,7 +71,7 @@ if (isset($_POST["user"]) && isset($_POST["telefone"]) && isset($_POST["cnpj"]) 
 
 
     $stmt = $con->prepare("INSERT INTO EMPRESA (ID, USERNAME, TELEFONE, CNPJ, EMAIL, SENHA, ATIVIDADE) VALUES (0, ?, ?, ?, ?, ?, ?);");
-    $stmt->bind_param("sssss", $username, $telefone, $cnpj, $email, $password, $atividade);
+    $stmt->bind_param("ssssss", $username, $telefone, $cnpj, $email, $password, $atividade);
     if (!$stmt->execute()) {
         die("Erro ao inserir na tabela EMPRESA: " . $stmt->error);
     }
@@ -92,19 +92,6 @@ if (isset($_POST["user"]) && isset($_POST["telefone"]) && isset($_POST["cnpj"]) 
     if (!$stmt->execute()) {
         die("Erro ao inserir na tabela FUNCIONARIOS: " . $stmt->error);
     }
-
-
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    
-    if (!$stmt->execute()) {
-        die("Error executing query: " . $stmt->error);
-    }
-    
-    if (!$stmt->execute()) {
-        die("Error inserting into EMPRESA: " . $stmt->error);
-    }    
 
     $getUser = $con->prepare("SELECT EMPRESA_ID, ID, TOKEN, CHAVE, FUNCAO FROM FUNCIONARIOS WHERE USERNAME = ?");
     $getUser->bind_param("s", $username);
