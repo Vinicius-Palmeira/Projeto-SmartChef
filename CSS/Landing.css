@@ -1,0 +1,349 @@
+:root{
+--vermelho-escuro: #260101;
+--vermelho-medio: #730202;
+--laranja: #BF2604;
+--laranja-claro: #D97904;
+--amarelo: #F2B705;
+--amarelo-claro: #faf5cd;
+--branco: #ffff;
+--preto: #1111;
+}
+
+/* Corpo do projeto */
+.bg-projeto{
+    background-color: var(--amarelo-claro);
+}
+/* Fim Corpo do projeto */
+/* Navbar */
+.logo{
+    display: flex;
+}
+
+.logoPrincipal{
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--laranja);
+}
+
+.logoSecundaria{
+    color: var(--amarelo);
+    font-size: 30px;
+}
+
+.link-nav a{
+    color: var(--vermelho-medio);
+    font-size: 18px;
+    
+}
+
+.btn-login{
+    text-decoration: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid var(--vermelho-medio);
+    border-radius: 8px;
+    color: var(--vermelho-escuro);
+    
+}
+
+.btn-login:hover{
+    background-color: var(--vermelho-medio);
+    color: var(--branco);
+    box-shadow: 3px 3px 5px var(--vermelho-escuro);
+}
+
+.bg-nav{
+    background-color: var(--amarelo-claro);
+    opacity: 0.95;
+}
+
+/* Fim Navbar */
+
+/* Main projeto */
+.bg-main{
+    margin-top: 80px;
+}
+
+.bg-container{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.mkt{
+    line-height: 1.9rem;
+    color: var(--laranja);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.mkt-sec{
+    font-size: 25px;
+    color: var(--amarelo);
+    font-weight: bold;
+}
+
+.mkt-text{
+    color: var(--vermelho-escuro);
+    text-align: justify;
+    font-size: 18px;
+}
+
+@media (min-width: 992px) { /* Para telas a partir do tamanho "large" (lg) */
+    .content-apresentacao {
+      margin-top: 200px;
+    }
+}
+  
+  /* Para telas menores (abaixo de 992px), remove o margin-top */
+@media (max-width: 991.98px) { 
+    .content-apresentacao {
+      margin-top: 0; 
+    }
+}
+
+@media (min-width: 992px) { /* Para telas a partir do tamanho "large" (lg) */
+    .marketing-sets {
+      margin-top: 200px;
+    }
+}
+  
+  /* Para telas menores (abaixo de 992px), remove o margin-top */
+@media (max-width: 991.98px) { 
+    .marketing-sets {
+      margin-right: 20px;
+      margin-left: 30px; 
+    }
+}
+
+
+hr{
+    height: 3px;
+    background-color: var(--laranja);
+    border: none;
+}
+
+.figure-center{
+    justify-content: center;
+    display: flex;
+}
+
+.img-infos{
+    margin-top: 20px;
+    width: 50%;
+    background-color: var(--amarelo);
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.text-mkt{
+    text-align: center;
+    color: var(--vermelho-escuro);
+    font-weight: bold;
+    border-bottom: 1px solid var(--laranja-claro);
+}
+
+.txt-info{
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    column-count: 2;
+    column-gap: 80px;
+    text-align: justify;
+    color: var(--vermelho-escuro);
+}
+
+  /* Para telas menores (abaixo de 992px), remove o margin-top */
+  @media (max-width: 991.98px) { 
+    .txt-info {
+      margin-left: 20px;
+      margin-right: 20px; 
+    }
+}
+
+  /* Para telas menores (abaixo de 992px), remove o margin-top */
+  @media (max-width: 991.98px) { 
+    .sobre .txt-info {
+      margin-right: 0px;
+      margin-left: 40px; 
+    }
+}
+
+.img-sobre{
+    width: 60%;
+    background-color: var(--amarelo);
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.img-cent{
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.sobre{
+    background-color: var(--laranja-claro);
+    margin-right: 0;
+}
+
+.precos{
+    color: var(--vermelho-escuro);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.valores div{
+    border: 3px solid var(--amarelo);
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px var(--amarelo);
+}
+
+
+.valores h2{
+    font-weight: bold;
+    color: var(--branco);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: var(--amarelo);
+}
+
+.valores article p{
+    margin-top: 20px;
+    text-align: justify;
+    padding: 15px;
+}
+
+.valores article p span{
+    font-weight: bold;
+}
+
+.plano-preco{
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 40px;
+}
+
+@media (min-width: 592px) { /* Para telas a partir do tamanho "large" (lg) */
+    .valores{
+        margin-left: 100px;
+    }
+}
+
+  /* Para telas menores (abaixo de 992px)*/
+  @media (max-width: 991.98px) { 
+    .plano-preco {
+      margin-right: 20px; 
+    }
+    .valores{
+        margin-left: 10px;
+    }
+}
+
+.img-emp{
+    width: 80%;
+    padding: 30px;
+    border-radius: 50%;
+    background-color: var(--amarelo);
+}
+
+.feed{
+    background-color: var(--branco);
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px var(--amarelo);
+}
+
+/* Para telas menores (abaixo de 992px), remove o margin-top */
+@media (max-width: 991.98px) { 
+    .feed {
+      margin-right: 20px;
+      margin-left: 20px; 
+    }
+}
+
+@media (min-width: 991.98px) {
+    .comentario{
+        padding-left: 20px;
+    }
+}
+
+.comentario{
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.chef-comentario{
+    margin-left: 20px;
+}
+/* Fim main projeto */
+
+/* Footer */
+
+  
+  .img-footer {
+    background-image: url(../IMG/wave.svg);
+    background-color: var(--laranja-claro);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+  
+  .img-footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .img-footer .col {
+    flex: 1;
+    min-width: 150px; /* ajuste conforme necessário para o tamanho mínimo das colunas */
+  }
+  
+  .img-footer h3 {
+    margin-top: 0;
+    color: var(--vermelho-escuro);
+    font-weight: bold;
+  }
+  
+  .img-footer p{
+    color: var(--vermelho-escuro);
+    text-align: justify;
+  }
+
+  .img-footer a {
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--vermelho-escuro);
+  }
+  
+  .bg-container-footer .icons figure{
+    height: 100%;
+  }
+
+
+@media (min-width: 768px) {
+    .bg-container-footer{
+        margin-left: 60px;
+        margin-top: 100px;
+        padding-bottom: 30px;
+    }
+}
+
+  
+  @media (max-width: 768px) {
+    .img-footer .col {
+      min-width: 100%; /* para telas pequenas, cada coluna ocupa 100% da largura disponível */
+    }
+  }
+  
+
+
+/* Fim footer */

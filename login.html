@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartChef</title>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+<body class="tela-login">
+
+    <div class="container d-flex">
+        <div class="">
+            
+            <div class="login row">
+                    <!-- Lado esquerdo -->
+            <div class="col-lg-5 col-12 formulario form-registrar">
+                <div class="form-container">
+                    <form method="POST" id="login">
+                        <h2>Login como funcionário</h2>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" name="user" class="form-control" placeholder="Usuário/Email: " required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" name="password" placeholder="Senha: " required>
+                        </div>
+                        <a href="" class="">Esqueceu a senha?</a>
+                        <button type="submit" class="botao-login ">Entrar</button>
+                    </form>
+                    
+                </div>
+            </div>
+
+            <!-- Lado direito -->
+            <div class="col-lg-7 p-0 right  col-12 ">
+                <div class="registro-login">  
+                        <h2>Seja bem vindo!</h2>
+                        <p>Já é um Smart? Faça login na sua conta de funcionário e aproveite todas as vantagens exclusivas que temos para você!</p>
+                        <a href="auth.html" class="botao-cadastro">Logar como empresa</a>
+                    </div>
+            </div>
+            </div>
+
+            </div>
+    </div>
+    
+    </div>
+    <script>
+        $('#login').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'post',
+                url: 'SRC/login.php',
+                data: $('#login').serialize(),
+                success: function (data) {
+                    location.href = './';
+                },
+                error: function (error) {
+                    console.log(error);
+                    Swal.fire({
+                        title: 'Oops!',
+                        text: error.statusText,
+                        icon: 'error',
+                        confirmButtonText: 'Tentar novamente'
+                    })
+                }
+            });
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Máscara para telefone
+            $('#telefone').mask('(00) 0 0000-0000');
+            // Máscara para CNPJ
+            $('#cnpj').mask('00.000.000/0000-00');
+            
+        });
+    </script>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
