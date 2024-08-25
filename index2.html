@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarLink</title>
+  <title>PROJETO</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="CSS/masterpage.css">
-  
+  <script src="JS/jquery.js"></script>
 </head>
 
 <body>
@@ -128,6 +128,54 @@
     window.onload = function() {
         carregarPagina('SRC/pages/UserADM.html');
    };
+  </script>
+    <script>
+      function load() {
+          $.ajax({
+              url: 'SRC/index.php',
+              success: function (data) {
+                  $.ajax({
+                      url: 'SRC/empresa.php',
+                      success: function (data) {
+                          $('#NOME').html(data);
+                          $.ajax({
+                            url: 'SRC/getFuncao.php',
+                            success: function (data2) {
+                                $('#FUNCAO').html(data2);
+                            }
+                        })
+                      }
+                  })
+                  $('main').html(data);
+              },
+              error: function (error) {
+                  console.log(error);
+                  Swal.fire({
+                      title: 'Erro',
+                      text: error.statusText,
+                      icon: 'error',
+                      confirmButtonText: 'Ok'
+                  })
+                  location.href = 'auth.html';
+              }
+          });
+      }
+
+      function logout() {
+          $.ajax({
+              url: 'SRC/logout.php',
+              success: function () {
+                  location.href = 'auth.html';
+              }
+          });
+      }
+
+      $(document).ready(function () {
+          load();
+          setInterval(() => {
+              load();
+          }, 3000);
+      });
   </script>
 </body>
 
