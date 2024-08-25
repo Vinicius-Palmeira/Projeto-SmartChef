@@ -8,20 +8,6 @@
 }
 
 :root {
-  --main-color: #212121;
-  --main-color-medium: #1A1A1A;
-  --main-color-dark: #000000;
-  --main-color-medium-light: #4D4D4D;
-  --main-color-light: #8C8C8C;
-  --text-color: #D6D6D6;
-  --side-color: #822B82;
-  --side-color-medium: #501B50;
-  --side-color-dark: #321132;
-  --side-color-light: #993399;
-  --side-color-white: #FCFCFC;
-  --side-color-grey: #C9C9C9;
-
-  /* Certo */
   --vermelho-escuro: #3e0101;
   --vermelho-medio: #730202;
   --laranja: #BF2604;
@@ -37,7 +23,7 @@
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  background-color: var(--branco);
+  background-color: var(--amarelo-claro);
   min-height: 100vh;
   display: flex;
   position: relative;

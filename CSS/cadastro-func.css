@@ -1,0 +1,65 @@
+:root {
+    --vermelho-escuro: #3e0101;
+    --vermelho-medio: #730202;
+    --laranja: #BF2604;
+    --laranja-claro: #D97904;
+    --amarelo: #F2B705;
+    --amarelo-claro: #faf5cd;
+    --branco: #ffff;
+    --preto: #1111; 
+}
+
+.bordas{
+    background-color: var(--amarelo-claro);
+    padding: 70px;
+    height: 100vh;
+}
+
+.formulario{
+    background-color: var(--branco);
+    padding: 50px;
+    min-height: 85vh;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0 var(--preto);
+}
+
+.inserir-info{
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inserir-info input{
+    border-radius: 5px;
+    border: 3px solid var(--preto);
+    padding: 5px;
+}
+
+.inserir-info select{
+    margin-right: 50px;
+}
+
+.inserir-info label{
+    font-size: 20px;
+}
+
+.botao-enviar{
+    border: 1px solid var(--laranja-claro);
+    border-radius: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 64px;
+    padding-right: 64px;
+    background-color: var(--amarelo);
+}
+
+.botao-limpar{
+    border: 1px solid var(--laranja-claro);
+    background-color: var(--branco);
+    border-radius: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 64px;
+    padding-right: 64px;
+    margin-left: 15px;
+}
