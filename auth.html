@@ -9,44 +9,40 @@
     <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body class="tela-login">
-
     <div class="container d-flex">
         <div class="">
-            
             <div class="login row">
-                    <!-- Lado esquerdo -->
-            <div class="col-lg-5 col-12 formulario form-registrar">
-                <div class="form-container">
-                    <form method="POST" id="login">
-                        <h2>Login</h2>
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Usuário</label>
-                            <input type="text" name="user" class="form-control" placeholder="Usuário/Email: " required>
+                <!-- Lado esquerdo -->
+                <div class="col-lg-5 col-12 formulario form-registrar">
+                    <div class="form-container">
+                        <form method="POST" id="login">
+                            <h2>Login</h2>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Usuário</label>
+                                <input type="text" name="user" class="form-control" placeholder="Usuário/Email: " required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" class="form-control" name="password" placeholder="Senha: " required>
+                            </div>
+                            <a href="" class="">Esqueceu a senha?</a>
+                            <button type="submit" class="botao-login ">Entrar</button>
+                        </form>
+                        <div>
+                            <a onclick="$('.login').fadeOut(0);$('.register').fadeIn(400)" class="">Ainda não tem uma conta? Cadastre-se</a>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" name="password" placeholder="Senha: " required>
-                        </div>
-                        <a href="" class="">Esqueceu a senha?</a>
-                        <button type="submit" class="botao-login ">Entrar</button>
-                    </form>
-                    <div>
-                        <a onclick="$('.login').fadeOut(0);$('.register').fadeIn(400)" class="">Ainda não tem uma conta? Cadastre-se</a>
+                    </div>
+                </div>
+
+                <!-- Lado direito -->
+                <div class="col-lg-7 p-0 right  col-12 ">
+                    <div class="registro-login">  
+                        <h2>Seja bem vindo!</h2>
+                        <p>Já é um Smart? Faça login na sua conta de funcionário e aproveite todas as vantagens exclusivas que temos para você!</p>
+                        <a href="loginFuncionario.html" class="botao-cadastro">Logar como funcionário</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Lado direito -->
-            <div class="col-lg-7 p-0 right  col-12 ">
-                <div class="registro-login">  
-                        <h2>Seja bem vindo!</h2>
-                        <p>Já é um Smart? Faça login na sua conta de funcionário e aproveite todas as vantagens exclusivas que temos para você!</p>
-                        <a href="login.html" class="botao-cadastro">Logar como funcionário</a>
-                    </div>
-            </div>
-            </div>
-            
-                
             
             <div class="row">
                 <!-- Lado esquerdo -->
@@ -58,32 +54,26 @@
                                 <label for="username" class="form-label">Usuário</label>
                                 <input type="text" id="username" name="user" class="form-control" placeholder="Usuário/Email:" required>
                             </div>
-                            
                             <div class="mb-3">
                                 <label for="telefone" class="form-label">Telefone</label>
                                 <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone:" required>
                             </div>
-                            
                             <div class="mb-3">
                                 <label for="cnpj" class="form-label">CNPJ</label>
                                 <input type="text" id="cnpj" name="cnpj" class="form-control" placeholder="CNPJ:" required>
                             </div>
-                            
                             <div class="mb-3">
                                 <label for="email" class="form-label">E-mail</label>
                                 <input type="email" id="email" name="email" class="form-control" placeholder="Email:" required>
                             </div>
-
                             <div class="mb-3">
                                 <label for="pass" class="form-label">Senha</label>
                                 <input type="password" id="pass" name="pass" class="form-control" placeholder="Senha:" required>
                             </div>
-
                             <div class="mb-3">
                                 <label for="word" class="form-label">Repita a senha</label>
                                 <input type="password" id="word" name="word" class="form-control" placeholder="Repita a senha:" required>
                             </div>
-                            
                             <a href="" class="forgot-password">Esqueceu a senha?</a>
                             <button type="submit" class="botao-login btn btn-primary">Cadastrar</button>
                         </form>
@@ -93,23 +83,27 @@
                     </div>
                 </div>
 
-                <!-- Lado direito -->
-                <div class="col-lg-7 col-12 p-0 right espaco register">
-                    <div class="registro-login">
-                        <h2>Seja bem-vindo!</h2>
-                        <p>Já é um Smart? Faça login na sua conta de funcionário e aproveite todas as vantagens exclusivas que temos para você!</p>
-                        <a href="login.html" class="botao-cadastro btn btn-secondary">Logar como funcionário</a>
+                    <!-- Lado direito -->
+                    <div class="col-lg-7 col-12 p-0 right espaco register">
+                        <div class="registro-login">
+                            <h2>Seja bem-vindo!</h2>
+                            <p>Já é um Smart? Faça login na sua conta de funcionário e aproveite todas as vantagens exclusivas que temos para você!</p>
+                            <a href="loginFuncionario.html" class="botao-cadastro btn btn-secondary">Logar como funcionário</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            </div>
         </div>
     </div>
+
+    <!-- SCRIPT's -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/sweetalert2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SCRIPT's - Funções -->
     <script>
         $('#login').on('submit', function (e) {
             e.preventDefault();
@@ -162,6 +156,5 @@
             
         });
     </script>
-    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

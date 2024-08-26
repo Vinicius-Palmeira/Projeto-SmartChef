@@ -25,7 +25,6 @@
 .right {
     background-color: #730202;
     border-radius: 40px;
-    
 }
 
 @media (min-width: 992px) { /* Para telas a partir do tamanho "large" (lg) */

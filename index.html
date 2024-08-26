@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJETO</title>
+  <title>SmartChef</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="CSS/masterpage.css">
-  <script src="JS/jquery.js"></script>
-  <script src="JS/masterpage.js"></script>
 </head>
 
 <body>
@@ -89,7 +87,6 @@
           <span>Administrar</span>
         </div>
       </ul>
-
     </div>
 
     <!-- Footer do sidebar (Logout / empresa) -->
@@ -115,22 +112,25 @@
     </div>
   </nav>
 
-
   <main id="content">
     <!-- Os conteudos vão carregar aqui -->
-
     <p class="copyright">
       &copy; 2021 - <span>SmartChef</span> All Rights Reserved.
     </p>
   </main>
-  
+
+  <!-- SCRIPT's -->
+  <script src="JS/jquery.js"></script>
+  <script src="JS/masterpage.js"></script>
+
+  <!-- SCRIPT's - Funções -->
   <script>
     //Carregar o conteúdo do menu assim que a página for carregada (Behinde) 
     window.onload = function() {
         carregarPagina('SRC/pages/UserADM.html');
-   };
+    };
   </script>
-    <script>
+  <script>
        function load() {
            $.ajax({
                url: 'SRC/index.php',
@@ -179,5 +179,4 @@
        });
   </script>
 </body>
-
 </html>
