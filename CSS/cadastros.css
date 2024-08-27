@@ -9,16 +9,43 @@
     --preto: #1111; 
 }
 
+
+#funcionario{
+    display: none;
+}
+
+#mesa{
+    display: none;
+}
+
 .bordas{
     background-color: var(--amarelo-claro);
-    padding: 70px;
+    padding: 10px;
     height: 100vh;
+}
+
+.btn-aux button{
+ padding-left: 40px;
+ padding-right: 40px;
+ margin-right: 20px;
+ margin-bottom: 20px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ border-radius: 10px;
+ background-color: var(--branco);
+ border: none;
+ box-shadow: 5px 5px 0 var(--preto);
+}
+
+.btn-aux button:hover{
+    background-color: var(--amarelo);
+    color: var(--branco);
 }
 
 .formulario{
     background-color: var(--branco);
     padding: 50px;
-    min-height: 85vh;
+    min-height: 75vh;
     border-radius: 20px;
     box-shadow: 10px 10px 0 var(--preto);
 }
@@ -53,6 +80,11 @@
     background-color: var(--amarelo);
 }
 
+.botao-enviar:hover{
+    background-color: var(--laranja-claro);
+    color: var(--branco);
+}
+
 .botao-limpar{
     border: 1px solid var(--laranja-claro);
     background-color: var(--branco);
@@ -62,4 +94,9 @@
     padding-left: 64px;
     padding-right: 64px;
     margin-left: 15px;
+}
+
+.botao-limpar:hover{
+    background-color: var(--vermelho-medio);
+    color: var(--branco);
 }

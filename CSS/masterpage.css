@@ -26,7 +26,7 @@ body {
   background-color: var(--amarelo-claro);
   min-height: 100vh;
   display: flex;
-  position: relative;
+  
 }
 
 .nome-soft{
@@ -193,7 +193,7 @@ nav:hover .botao-encolher,
 }
 
 .icone {
-  margin-left: -10px;
+  margin-left: 0;
   font-size: 1.3rem;
   text-align: center;
   min-width: 0.1rem;
@@ -229,6 +229,11 @@ nav:hover .botao-encolher,
 
 .acesso-lateral a.active i:last-child {
   opacity: 1;
+}
+
+.ativado{
+  background-color: var(--vermelho-escuro);
+  border-radius: 10px;
 }
 
 .janela-ativa {
