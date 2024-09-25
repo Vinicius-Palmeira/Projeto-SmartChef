@@ -1,0 +1,44 @@
+:root {
+    --vermelho-escuro: #3e0101;
+    --vermelho-medio: #730202;
+    --laranja: #BF2604;
+    --laranja-claro: #D97904;
+    --amarelo: #F2B705;
+    --amarelo-claro: #faf5cd;
+    --branco: #fff;
+    --preto: #111;
+}  
+
+.corpo{
+    margin: 30px;
+}
+
+.botao-entrega{
+    background-color: var(--laranja-claro);
+    color: var(--branco);
+}
+
+.botao-entrega:hover{
+    background-color: var(--laranja);
+    color: var(--branco);
+    box-shadow: 2px 2px var(--preto);
+}
+
+.botao-cancelar{
+    border: 2px solid var(--vermelho-escuro);
+}
+
+.botao-cancelar:hover{
+    background-color: var(--vermelho-medio);
+    color: var(--branco);
+}
+
+.produto{
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px var(--preto);
+}
+
+.produto img{
+    border-radius: 20px;
+    padding: 5px;
+}

@@ -1,180 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartChef</title>
-  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/masterpage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartChef</title>
+    <link rel="stylesheet" href="CSS/aos.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/Landing.css">
+    <link rel="stylesheet" href="CSS/boxicons.css">
 </head>
-
-<body>
-  <nav>
-    <!-- Imagem e Nome da empresa -->
-    <div class="menu-lateral-topo">
-      <span class="botao-encolher">
-        <i class='bx bx-chevron-left'></i>
-      </span>
-      <h3 class="esconder nome-soft mt-2">Smarta <span>Chef</span></h3>
-    </div>
-
-    <!-- Função de search -->
-    <div class="procurar">
-      <i class='bx bx-search'></i>
-      <input type="text" class="esconder" placeholder="Procura rapida ...">
-    </div>
-
-    <!-- Sidebar menu -->
-    <div class="acesso-lateral mt-4">
-      <ul>
-        <div class="janela-ativa"></div>
-        <li class="element-ferramenta" data-tooltip="0">
-          <a href="SRC/pages/UserADM.html" class="active " data-active="0"> 
-            <div class="icone">
-              <i class='bx bx-tachometer'></i>
-              <i class='bx bxs-tachometer'></i>
-            </div>
-            <span class="acesso esconder" >Dashboard</span>
-          </a>
-        </li>
-        <li class="element-ferramenta " data-tooltip="1">
-          <a href="SRC/pages/Cadastros.html" data-active="1">
-            <div class="icone">
-              <i class='bx bx-folder'></i>
-              <i class='bx bxs-folder'></i>
-            </div>
-            <span class="acesso esconder">Cadastros</span>
-          </a>
-        </li>
-        <li class="element-ferramenta" data-tooltip="2">
-          <a href="" data-active="2">
-            <div class="icone">
-              <i class='bx bx-message-square-detail'></i>
-              <i class='bx bxs-message-square-detail'></i>
-            </div>
-            <span class="acesso esconder">Mesas</span>
-          </a>
-        </li>
-        <li class="element-ferramenta" data-tooltip="3">
-          <a href="#" data-active="3">
-            <div class="icone">
-              <i class='bx bx-bar-chart-square'></i>
-              <i class='bx bxs-bar-chart-square'></i>
-            </div>
-            <span class="acesso esconder">Históricos</span>
-          </a>
-        </li>
-
-        <li class="element-ferramenta" data-tooltip="4">
-          <a href="" data-active="4">
-            <div class="icone">
-              <i class='bx bx-edit-alt'></i>
-              <i class='bx bxs-edit-alt'></i>
-            </div>
-            <span class="acesso esconder">Administrar</span>
-          </a>
-        </li>
-
-        <!-- tooltip da navbar -->
-        <div class="tooltip">
-          <span class="show">Dashboard</span>
-          <span>Cardápio</span>
-          <span>Mesas</span>
-          <span>Históricos</span>
-          <span>Administrar</span>
-        </div>
-      </ul>
-    </div>
-
-    <!-- Footer do sidebar (Logout / empresa) -->
-    <div class="sidebar-footer">
-      <a href="#" class="account element-ferramenta" data-tooltip="0">
-        <i class='bx bx-user'></i>
-      </a>
-      <div class="admin-user element-ferramenta" data-tooltip="1">
-        <div class="admin-profile esconder">
-          <div class="admin-info ms-3">
-            <h3 id="NOME"></h3>
-            <h5 id="FUNCAO"></h5>
+<body class="bg-projeto">
+    <nav class="navbar navbar-expand-lg fixed-top bg-nav">
+        <div class="container-fluid">
+          <div class="logo">
+            <h1 class="logoPrincipal">Smart</h1>
+            <h1 class="logoSecundaria">Chef</h1>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <div class="d-lg-flex link-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#start">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#precos">Preços</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#usuarios">Cases</a>
+                  </li>
+              </div>          
+            </ul>
+              <div>
+                <a class="btn-login" href="INDEX/">Login</a>
+              </div>   
           </div>
         </div>
-        <button class="log-out" id="sair" onclick="logout()" >
-          <i class='bx bx-log-out'></i>
-        </button>
+    </nav>
+    <main class="bg-main">
+        <section class="row bg-container">
+            <aside class="col-lg-6 col-12" style="display: flex; max-height: 100vh;" id="start">
+                <div class="content-apresentacao" data-aos="fade-right">
+                    <h1 class="mkt">A solução para o seu negócio! <br><span class="mkt-sec">Eleve o padrão do seu negócio com o SmartChef: Gestão inteligente e eficiênte</span></h1>
+                    <p class="mkt-text">
+                      Assine o plano do SmartChef para otimizar a gestão do seu restaurante, agilizar pedidos, reduzir erros e oferecer um atendimento impecável aos clientes, tudo com suporte e atualizações constantes
+                    </p>
+                </div>
+            </aside>
+            <figure class="col-lg-5 offset-lg-1 d-none d-md-none d-lg-block " data-aos="fade-left">
+                <img src="IMG/chef.png" alt="comida" class="w-75">
+            </figure>
+        </section>
+
+        <hr class="mt-4 bg-container">
+
+        <section>
+          <div class="row">
+            <div class="col-lg-5 d-none d-lg-block mt-5 img-cent" data-aos="fade-up">
+              <figure class="figure-center">
+                <img src="IMG/visao.png" alt="" class="img-infos">
+              </figure>
+            </div>
+            <div class="col-lg-6 col-11 mt-5 marketing-sets" data-aos="fade-up">
+              <h2 class="text-mkt">Visão</h2>
+              <p class="txt-info">
+                Ser um líder inovador em desenvolvimento de aplicativos, reconhecido por nossa força e resiliência, assim como o rinoceronte. Buscamos transformar o mercado com soluções robustas e seguras, mantendo uma abordagem focada e determinada. Combinando simplicidade e eficiência, nosso objetivo é proporcionar experiências tecnológicas excepcionais que ajudem nossos clientes a superar desafios e alcançar novos patamares de sucesso.
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-11 offset-lg-1 mt-4 marketing-sets" data-aos="fade-up">
+              <h2 class="text-mkt">Missão</h2>
+              <p class="txt-info">
+                Desenvolver aplicativos poderosos e inovadores com a mesma força e resiliência que define o rinoceronte. Nossa missão é criar soluções tecnológicas robustas e seguras que atendam às necessidades dos nossos clientes com determinação e simplicidade, proporcionando valor duradouro e impulsionando o crescimento de nossos parceiros de negócios.
+              </p>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-block mt-4 img-cent" data-aos="fade-up">
+              <figure class="figure-center">
+                <img src="IMG/missao.png" alt="" class="img-infos">
+              </figure>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-block mt-4 img-cent" data-aos="fade-up">
+              <figure class="figure-center">
+                <img src="IMG/valores.png" alt="" class="img-infos">
+              </figure>
+            </div>
+            <div class="col-lg-6 col-11 mt-4 marketing-sets" data-aos="fade-up">
+              <h2 class="text-mkt">Valores</h2>
+              <p class="txt-info">
+                Força e Resiliência: Como o rinoceronte, a empresa se compromete a criar soluções robustas e duradouras, enfrentando desafios com coragem e determinação.<br><br>
+                
+                Inovação e Singularidade: Com a mesma singularidade e características únicas do rinoceronte, buscamos trazer inovação e criatividade em cada projeto.<br><br>
+                
+                Estabilidade e Confiabilidade: Representando a estabilidade e a confiança do rinoceronte, garantimos que nossos aplicativos sejam seguros e confiáveis.<br><br>
+                
+                Simplicidade e Eficiência: Assim como o rinoceronte é um exemplo de simplicidade na natureza, valorizamos soluções eficientes e diretas ao ponto.<br><br>
+
+                Proteção e Segurança: Refletindo a natureza protetora do rinoceronte, asseguramos a proteção e segurança dos dados e da experiência do usuário.<br><br>
+
+                Determinação e Foco: Como o rinoceronte, que segue seu caminho com determinação, estamos focados em entregar resultados excepcionais e atender às necessidades dos nossos clientes.
+              </p>
+            </div>
+
+            <div class="row sobre" id="sobre">
+              <div class="col-10 offset-1">
+                <h2 class="text-mkt mt-3">Sobre</h2>
+              </div>
+              <div class="col-lg-5 col-11 offset-lg-1" data-aos="fade-right">
+                <p class="txt-info">
+                  O SmartChef é uma solução inovadora desenvolvida para transformar a gestão de estabelecimentos de alimentação. Criado por uma equipe de especialistas em tecnologia e gastronomia, o SmartChef combina simplicidade e eficiência para atender às necessidades de restaurantes, lanchonetes, pizzarias e outros negócios do setor.<br>
+  
+                  Nossa plataforma foi projetada para simplificar o processo de pedidos, melhorar a comunicação entre a equipe e proporcionar uma experiência de atendimento excepcional aos clientes. Com o SmartChef, os proprietários e gerentes têm total controle sobre todas as operações, desde a criação do cardápio até a gestão de pedidos
+                </p>
+              </div>
+              <div class="col-lg-5 d-none d-lg-block offset-1 img-cent" data-aos="fade-left">
+                <figure>
+                  <img src="IMG/empresa.png" alt="" class="img-sobre">
+                </figure>
+              </div>
+            </div>
+
+            <div class="row" id="precos">
+              <div class="col-12">
+                <h3 class="precos">Veja nossos preços</h3>
+              </div>
+
+              <div class="row valores" data-aos="fade-up">
+                <div class="col-lg-3 col-11 plano-preco" >
+                    <h2>Plano Bronze</h2>
+                  <article>
+                    <p>
+                      <span>Acesso Básico ao Sistema:</span> Ideal para pequenos estabelecimentos que desejam gerenciar seus pedidos e cardápios de maneira eficiente, sem complicações.<br><br>
+                      
+                      <span>Gestão de Pedidos e Cardápio:</span> Permite a criação e personalização do cardápio, bem como o gerenciamento dos pedidos realizados pelos clientes.<br><br>
+                      
+                      <span>Acesso para 1 Administrador:</span> Um único usuário administrador pode acessar todas as funcionalidades principais para gerenciar o estabelecimento.<br><br>
+                      
+                      <span>Suporte Básico:</span> Atendimento prioritário via e-mail, com respostas em até 48 horas.
+                    </p>
+                  </article>
+                </div>
+  
+                <div class="col-lg-3 col-11 plano-preco" >
+                  <h2>Plano Prata</h2>
+                  <article>
+                    <p>
+                      <span>Funcionalidades Avançadas:</span> Inclui todas as funcionalidades do Plano Bronze, além de recursos avançados de gestão e relatórios.<br><br>
+  
+                      <span>Gestão de Equipe:</span> Permite a criação de subcontas para garçons e cozinheiros, otimizando a comunicação interna e o fluxo de trabalho.<br><br>
+                      
+                      <span>Relatórios de Vendas:</span> Acesso a relatórios detalhados que auxiliam no acompanhamento das vendas e no controle de estoque.<br><br>
+                      
+                      <span>Acesso para 3 Administradores:</span> Permite a gestão compartilhada do estabelecimento, ideal para negócios com mais de um gerente.<br><br>
+                      
+                      <span>Suporte Prioritário:</span> Atendimento via chat com resposta em até 24 horas.<br><br>
+                    </p>
+                  </article>
+                </div>
+  
+                <div class="col-lg-3 col-11 plano-preco" >
+                  <h2>Plano Ouro</h2>
+                  <article>
+                    <p>
+                      <span>Todas as Funcionalidades Completas:</span> Inclui todas as funcionalidades dos Planos Bronze e Prata, além de recursos premium.<br><br>
+
+                      <span>Controle Completo de Bônus e Promoções:</span> Ferramentas para criar e gerenciar promoções e programas de fidelidade, incentivando o retorno de clientes.<br><br>
+                      
+                      <span>Relatórios Personalizados:</span> Relatórios avançados, totalmente customizáveis, para análise detalhada de performance e planejamento estratégico.<br><br>
+                      
+                      <span>Acesso Ilimitado para Administradores e Funcionários:</span> Ideal para grandes estabelecimentos que necessitam de múltiplos usuários com diferentes níveis de acesso.<br><br>
+                      
+                      <span>Suporte Dedicado 24/7:</span> Suporte exclusivo com atendimento em tempo real, disponível 24 horas por dia, 7 dias por semana.<br><br>
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-5" data-aos="fade-up" id="usuarios">
+              <div class="col-lg-6 d-none d-lg-block chef-comentario" data-aos="fade-right">
+                <figure>
+                  <img src="IMG/Chef-PNG-File.png" alt="" class="img-emp">
+                </figure>
+              </div>
+
+              <div class="col-lg-4 col-12">
+                <div class="row mt-5 feed" data-aos="fade-left">
+                  <div class="col-3" data-aos="fade-left">
+                    <figure>
+                      <img src="IMG/avatar.png" alt="" class="">
+                    </figure>
+                  </div>
+                  <div class="col-8" data-aos="fade-left">
+                    <p class="comentario">
+                      "Ótima interface! Fácil de navegar e super intuitiva."  
+                    </p>
+                    <p>
+                      Jess, CEO da Lanchonete da Jess
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row mt-5 feed" data-aos="fade-left">
+                  <div class="col-3" data-aos="fade-left">
+                    <figure>
+                      <img src="IMG/avatar.png" alt="" class="">
+                    </figure>
+                  </div>
+                  <div class="col-8" data-aos="fade-left">
+                    <p class="comentario">
+                      "O sistema agilizou muito o atendimento no meu restaurante. Recomendo!"
+                    </p>
+                    <p>
+                      Ana, Dona do Ana Banana
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row mt-5 feed" data-aos="fade-left">
+                  <div class="col-3" data-aos="fade-left">
+                    <figure>
+                      <img src="IMG/avatar.png" alt="" class="">
+                    </figure>
+                  </div>
+                  <div class="col-8" data-aos="fade-left">
+                    <p class="comentario">
+                      "Excelente suporte técnico, resolveram meu problema rapidamente."
+                    </p>
+                    <p>
+                      Marta, Proprietaria da Pizzaria Comida em Lata
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <footer>
+      <div class="img-footer">
+        <div class="row">
+          <div class="col-2 bg-container-footer" data-aos="fade-up">
+            <h3>Sobre nós</h3>
+            <p>
+              O SmartChef é uma plataforma que simplifica a gestão de restaurantes e similares, otimizando pedidos, comunicação e controle operacional.
+            </p>
+          </div>
+
+          <div class="col-2 bg-container-footer" data-aos="fade-up">
+            <h3>Links rapidos</h3>
+            <a href="#start">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#precos">Preços</a>
+            <a href="#usuarios">Cases</a>
+          </div>
+
+          <div class="col-2 bg-container-footer" data-aos="fade-up">
+            <h3>Suporte</h3>
+            <a href="">smartchef@contato.com.br</a>
+            <a href="">(12)9 8888-8888</a>
+            
+          </div>
+
+          <div class="col-2 bg-container-footer" data-aos="fade-up">
+            <h3>Redes Sociais</h3>
+            <div class="row icons">
+              <div class="col-2">
+                <figure>
+                  <a href="" ><i class='bx bxl-facebook-square'></i></a>
+                </figure>
+              </div>
+
+              <div class="col-2">
+                <figure>
+                  <a href="" ><i class='bx bxl-instagram-alt' ></i></a>
+                </figure>
+              </div>
+
+              <div class="col-2">
+                <figure>
+                  <a href="" ><i class='bx bxl-youtube' ></i></a>
+                </figure>
+              </div>
+
+              <div class="col-2">
+                <figure>
+                  <a href="" ><i class='bx bxl-linkedin-square' ></i></a>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="tooltip">
-        <span class="show">Empresa</span>
-        <span>Logout</span>
-      </div>
-    </div>
-  </nav>
+    </footer>
 
-  <main id="content">
-    <!-- Os conteudos vão carregar aqui -->
-    <p class="copyright">
-      &copy; 2021 - <span>SmartChef</span> All Rights Reserved.
-    </p>
-  </main>
-
-  <!-- SCRIPT's -->
-  <script src="JS/jquery.js"></script>
-  <script src="JS/masterpage.js"></script>
-
-  <!-- SCRIPT's - Funções -->
-  <script>
-    //Carregar o conteúdo do menu assim que a página for carregada (Behinde) 
-    window.onload = function() {
-        carregarPagina('SRC/pages/UserADM.html');
-    };
-  </script>
-  <script>
-       function load() {
-           $.ajax({
-               url: 'SRC/index.php',
-               success: function (data) {
-                   $.ajax({
-                       url: 'SRC/empresa.php',
-                       success: function (data) {
-                           $('#NOME').html(data);
-                           $.ajax({
-                             url: 'SRC/getFuncao.php',
-                             success: function (data2) {
-                                 $('#FUNCAO').html(data2);
-                             }
-                         })
-                       }
-                   })
-                   $('main').html(data);
-               },
-               error: function (error) {
-                   console.log(error);
-                   Swal.fire({
-                       title: 'Erro',
-                       text: error.statusText,
-                       icon: 'error',
-                       confirmButtonText: 'Ok'
-                   })
-                   location.href = 'auth.html';
-               }
-           });
-       }
-
-       function logout() {
-           $.ajax({
-               url: 'SRC/logout.php',
-               success: function () {
-                   location.href = 'auth.html';
-               }
-           });
-       }
-
-       $(document).ready(function () {
-           load();
-           
-       });
-  </script>
+    <!-- SCRIPT's -->
+    <script src="JS/aos.js"></script>
+    <script src="JS/bootstrap.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>

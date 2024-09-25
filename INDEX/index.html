@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <script src="JS/jquery.js"></script>
+    <script src="JS/sweetalert2.js"></script>
+
+
+    <link rel="stylesheet" href="CSS/sweetalert2.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/masterpage.css">
+    <link rel="stylesheet" href="CSS/funcao.css">
+</head>
+
+<style>
+   
+</style>
+
+<body>
+    <header>
+
+        <div class="CC py-1 ">
+            <!-- Imagem e Nome da empresa -->
+            <div class="menu-lateral-topo">
+                <h3 class=" nome-soft">Smart <span>Chef</span> </h3>
+                <h1 id="NOME" class="nome"></h1>
+            </div>
+            
+            <button class="log-out" id="sair" onclick="logout()">
+                <i class='bx bx-log-out'></i>
+            </button>
+        </div>
+
+    </header>
+    <main>
+    </main>
+    <script>
+        function load() {
+            $.ajax({
+                url: 'SRC/index.php',
+                success: function (data) {
+                    $.ajax({
+                        url: 'SRC/empresa.php',
+                        success: function (data) {
+                            $('#NOME').html(data);
+                        }
+                    })
+                    $('main').html(data);
+                },
+                error: function (error) {
+                    console.log(error);
+                    Swal.fire({
+                        title: 'Erro',
+                        text: error.statusText,
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                    location.href = 'auth.html';
+                }
+            });
+        }
+
+        function logout() {
+            $.ajax({
+                url: 'SRC/logout.php',
+                success: function () {
+                    location.href = 'auth.html';
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            load();
+        });
+    </script>
+</body>
+
+</html>

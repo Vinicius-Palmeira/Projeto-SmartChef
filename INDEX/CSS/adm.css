@@ -1,0 +1,139 @@
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Certifique-se de que o html e o body ocupem 100% da altura da viewport */
+  margin: 0;
+}
+
+:root {
+  --vermelho-escuro: #3e0101;
+  --vermelho-medio: #730202;
+  --laranja: #BF2604;
+  --laranja-claro: #D97904;
+  --amarelo: #F2B705;
+  --amarelo-claro: #fef9dc;
+  --branco: #fff;
+  --preto: #111;
+  --cinza: #727171;
+}
+
+
+#body-adm{
+  overflow-x: hidden;
+  background-color: var(--amarelo-claro);
+  display: flex;
+  flex: 1;
+  background-color: var(--amarelo-claro);
+}
+
+
+#sidebar{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--branco);
+  border-radius: 0px 8px 8px 0px;
+  box-shadow: 2px 2px 15px var(--cinza);
+  position: relative;
+  transition: all -5s;
+  min-width: 82px;
+}
+
+#sidebar_content{
+  padding: 12px;
+}
+
+#side_items{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.side-item{
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.side-item.active, .side-item.active a{
+  background-color: var(--laranja-claro);
+  color: var(--branco);
+}
+
+.side-item:hover, .side-item:hover a{
+  background-color: var(--amarelo);
+  color: var(--branco);
+}
+
+.side-item a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vermelho-escuro);
+}
+
+.side-item a i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+#open_btn{
+  position: absolute;
+  top: 30px;
+  right: -18px;
+  background-color: var(--laranja);
+  color: var(--branco);
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#open_btn_icon{
+  transition: transform .3s ease;
+}
+
+.open-sidebar #open_btn_icon{
+  transform: rotate(180deg);
+}
+
+.item-description{
+  width: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  transition: width .6s;
+  height: 0px;
+}
+
+#sidebar.open-sidebar .item-description{
+  width: 120px;
+  height: auto;
+}
+
+#sidebar.open-sidebar .side-item a{
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+#main-content{
+  padding: 20px;
+}
